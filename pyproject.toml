@@ -1,0 +1,118 @@
+[project]
+name = "lemonsec-qa-automation"
+version = "0.1.0"
+description = "LemonSec QA Automation — AI-Powered End-to-End Test Automation (Fork of TestZeus Hercules)"
+authors = [{ name = "Govind Pratap Singh", email = "hackergovind@proton.me" }]
+maintainers = [{ name = "Govind Pratap Singh", email = "hackergovind@proton.me" }]
+requires-python = ">=3.11,<3.14"
+readme = "README.md"
+license = { text = "Apache-2.0" }
+keywords = [
+    "AI",
+    "end-to-end testing",
+    "automation",
+    "LemonSec",
+    "QA",
+    "security testing",
+    "Hercules",
+]
+classifiers = [
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "Programming Language :: Python :: 3.13",
+    "Topic :: Software Development :: Testing",
+    "Topic :: Software Development :: Quality Assurance",
+    "Intended Audience :: Developers",
+    "License :: OSI Approved :: Apache Software License",
+]
+dependencies = [
+    "nest-asyncio>=1.6.0,<2",
+    "pillow>=12.2.0,<13",
+    "playwright<=1.49.0",
+    "pydantic>=2.6.2,<3",
+    "python-dotenv>=1.0.0,<2",
+    "python-json-logger>=2.0.7,<3",
+    "pyyaml>=6.0.1,<7",
+    "sqlalchemy>=2.0.36,<3",
+    "junitparser>=3.2.0,<4",
+    "sentry-sdk>=2.18.0,<3",
+    "playwright-recaptcha>=0.5.1,<0.6",
+    "junit2html>=31.0.2,<32",
+    "aiohttp>=3.13.2,<4",
+    "inflection>=0.5.1,<0.6",
+    "ag2[lmm, mcp, openai, groq, bedrock, anthropic, gemini]>=0.10.0,<0.11",
+    "mcp>=1.23.3,<2",
+    "psutil>=5.9.0,<6",
+    "aiofiles>=24.1.0,<25",
+    "chromadb>=1.0.16,<2",
+    "sentence-transformers>=5.0.0,<6",
+    "unstructured[all-docs]>=0.18.18,<0.19",
+    "httpx>=0.28.1,<0.29",
+    "portkey-ai>=1.11.1,<2",
+    "opentelemetry-proto>=1.27.0",
+    "starlette>=0.50.0,<0.51",
+    "urllib3>=2.6.1,<3",
+    "pypdf>=6.10.2,<7",
+    "fonttools>=4.61.0,<5",
+    "transformers>=5.0.0rc3,<6",
+    "requests>=2.32.5,<3",
+    "torch>=2.9.1,<3",
+    "protobuf>=6.33.5,<7",
+    "cryptography>=46.0.7,<47",
+    "anthropic>=0.87.0",
+    "python-multipart>=0.0.26",
+]
+
+[project.urls]
+Homepage = "https://github.com/govindpratapsingh404/lemonsec-qa-automation"
+Repository = "https://github.com/govindpratapsingh404/lemonsec-qa-automation"
+Documentation = "https://github.com/govindpratapsingh404/lemonsec-qa-automation/tree/main/docs"
+"Bug Tracker" = "https://github.com/govindpratapsingh404/lemonsec-qa-automation/issues"
+"Upstream (TestZeus Hercules)" = "https://github.com/test-zeus-ai/testzeus-hercules"
+"Author LinkedIn" = "https://www.linkedin.com/in/govindpratapsingh404/"
+"Author Medium" = "http://medium.com/@hackergovind"
+
+[project.scripts]
+lemonsec-qa = "lemonsec_hercules.__main__:main"
+
+[dependency-groups]
+dev = [
+    "pytest>=8.3.3,<10",
+    "coverage>=7.6.4,<8",
+    "black>=26.3.1,<27",
+    "isort>=5.13.2,<6",
+    "pytest-cov>=6.0.0,<7",
+    "mypy>=1.13.0,<2",
+    "gitchangelog>=3.0.4,<4",
+    "mkdocs>=1.6.1,<2",
+    "ipdb>=0.13.13,<0.14",
+    "twine>=5.1.1,<6",
+    "deptry>=0.21.0,<0.22",
+    "pytest-rerunfailures>=15.0,<16",
+]
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[tool.hatch.build.targets.wheel]
+packages = ["lemonsec_hercules"]
+
+[tool.isort]
+profile = "black"
+known_first_party = ["lemonsec_hercules"]
+line_length = 200
+
+[tool.black]
+line-length = 200
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+python_files = "test_*.py"
+python_classes = "Test*"
+python_functions = "test_*"
+
+[tool.coverage.run]
+source = ["lemonsec_hercules"]
+omit = ["tests/*"]

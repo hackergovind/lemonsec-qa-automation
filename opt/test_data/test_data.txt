@@ -1,0 +1,9 @@
+# LemonSec QA Automation — Test Data
+# ───────────────────────────────────
+# Add your test data as key=value pairs below.
+# This file is read by the Hercules engine during test execution.
+#
+# Example:
+# base_url=https://example.com
+# admin_username=testadmin
+# admin_password=SecureP@ss123

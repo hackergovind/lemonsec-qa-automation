@@ -1,0 +1,86 @@
+{
+  "lemonsec-default": {
+    "planner_agent": {
+      "model_name": "gpt-4o",
+      "model_api_key": "PUT_YOUR_API_KEY_HERE",
+      "model_base_url": null,
+      "llm_config_params": {
+        "cache_seed": 1234,
+        "temperature": 0,
+        "seed": 12345
+      }
+    },
+    "nav_agent": {
+      "model_name": "gpt-4o",
+      "model_api_key": "PUT_YOUR_API_KEY_HERE",
+      "model_base_url": null,
+      "llm_config_params": {
+        "cache_seed": 1234,
+        "temperature": 0,
+        "seed": 12345
+      }
+    },
+    "mem_agent": {
+      "model_name": "gpt-4o",
+      "model_api_key": "PUT_YOUR_API_KEY_HERE",
+      "model_base_url": null,
+      "llm_config_params": {
+        "cache_seed": 1234,
+        "temperature": 0,
+        "seed": 12345
+      }
+    },
+    "helper_agent": {
+      "model_name": "gpt-4o",
+      "model_api_key": "PUT_YOUR_API_KEY_HERE",
+      "model_base_url": null,
+      "llm_config_params": {
+        "cache_seed": 1234,
+        "temperature": 0,
+        "seed": 12345
+      }
+    }
+  },
+  "lemonsec-litellm-gemini": {
+    "planner_agent": {
+      "model_name": "gemini-2.5-flash",
+      "model_api_key": "PUT_YOUR_API_KEY_HERE",
+      "model_base_url": "https://your-litellm-proxy-url",
+      "llm_config_params": {
+        "cache_seed": 1234,
+        "temperature": 0,
+        "seed": 12345
+      }
+    },
+    "nav_agent": {
+      "model_name": "gemini-2.5-flash",
+      "model_api_key": "PUT_YOUR_API_KEY_HERE",
+      "model_base_url": "https://your-litellm-proxy-url",
+      "llm_config_params": {
+        "cache_seed": 1234,
+        "temperature": 0,
+        "seed": 12345
+      }
+    },
+    "mem_agent": {
+      "model_name": "gemini-2.5-flash",
+      "model_api_key": "PUT_YOUR_API_KEY_HERE",
+      "model_base_url": "https://your-litellm-proxy-url",
+      "llm_config_params": {
+        "cache_seed": 1234,
+        "temperature": 0,
+        "seed": 12345
+      }
+    },
+    "helper_agent": {
+      "model_name": "gemini-2.5-flash",
+      "model_api_key": "PUT_YOUR_API_KEY_HERE",
+      "model_base_url": "https://your-litellm-proxy-url",
+      "llm_config_params": {
+        "cache_seed": 1234,
+        "temperature": 0,
+        "seed": 12345
+      }
+    }
+  }
+}

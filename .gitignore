@@ -1,0 +1,54 @@
+# ──────────────────────────────────────────────────────────────
+#  LemonSec QA Automation — .gitignore
+# ──────────────────────────────────────────────────────────────
+
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.egg-info/
+dist/
+build/
+*.egg
+
+# Virtual environments
+.venv/
+venv/
+env/
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# Environment & secrets
+.env
+agents_llm_config.json
+
+# Test outputs
+opt/output/
+opt/proofs/
+opt/log_files/
+tests/test_output.xml
+htmlcov/
+.coverage
+coverage.xml
+
+# Caches
+.cache/
+.pytest_cache/
+.mypy_cache/
+HF_HOME/
+
+# OS
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Docker
+.docker/
+
+# UV lock (optional — uncomment if you want to track it)
+# uv.lock
