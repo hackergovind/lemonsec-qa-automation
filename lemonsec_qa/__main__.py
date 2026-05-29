@@ -2,8 +2,7 @@
 LemonSec QA Automation — CLI Entry Point
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Wraps the upstream TestZeus Hercules CLI, allowing invocation via
-the `lemonsec-qa` command while preserving all original functionality.
+AI-Powered End-to-End Test Automation Framework.
 
 Usage:
     lemonsec-qa --input-file test.feature --output-path ./output \\
@@ -13,7 +12,7 @@ Usage:
     lemonsec-qa --project-base ./opt --llm-model gpt-4o \\
                 --llm-model-api-key <KEY>
 
-Maintainer: Govind Pratap Singh
+Developer: Govind Pratap Singh
   LinkedIn: https://www.linkedin.com/in/govindpratapsingh404/
   Medium:   http://medium.com/@hackergovind
 """
@@ -24,20 +23,17 @@ import sys
 def main():
     """
     LemonSec QA Automation entry point.
-
-    Delegates to the upstream testzeus_hercules.__main__.main() function,
-    wrapping it so that the `lemonsec-qa` console script works seamlessly.
     """
     try:
-        from testzeus_hercules.__main__ import main as hercules_main
+        from testzeus_hercules.__main__ import main as _engine_main
     except ImportError:
         print(
             "\n"
             "  ╔════════════════════════════════════════════════════════╗\n"
-            "  ║  [ERROR] testzeus-hercules is not installed.          ║\n"
+            "  ║  [ERROR] Core engine is not installed.                ║\n"
             "  ║                                                        ║\n"
             "  ║  LemonSec QA Automation requires the upstream          ║\n"
-            "  ║  testzeus-hercules package as a runtime dependency.    ║\n"
+            "  ║  testzeus-hercules engine as a runtime dependency.     ║\n"
             "  ║                                                        ║\n"
             "  ║  Install it with:                                      ║\n"
             "  ║    pip install testzeus-hercules                       ║\n"
@@ -48,8 +44,7 @@ def main():
         )
         sys.exit(1)
 
-    # Hand off to the upstream Hercules CLI
-    hercules_main()
+    _engine_main()
 
 
 if __name__ == "__main__":

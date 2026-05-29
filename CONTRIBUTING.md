@@ -2,7 +2,7 @@
 
 Thank you for your interest in contributing to **LemonSec QA Automation**! 🍋
 
-## Maintainer
+## Developer
 
 - **Govind Pratap Singh**
   - LinkedIn: [govindpratapsingh404](https://www.linkedin.com/in/govindpratapsingh404/)
@@ -46,10 +46,6 @@ Open a feature request issue describing:
 
 - Add tests for any new functionality
 - Ensure all existing tests pass: `make test`
-
-## Upstream Contributions
-
-If your change applies to the core Hercules engine (not LemonSec-specific customizations), please consider also contributing it upstream to [TestZeus Hercules](https://github.com/test-zeus-ai/testzeus-hercules).
 
 ## Code of Conduct
 

@@ -1,7 +1,7 @@
 [project]
 name = "lemonsec-qa-automation"
 version = "0.1.0"
-description = "LemonSec QA Automation — AI-Powered End-to-End Test Automation (Fork of TestZeus Hercules)"
+description = "LemonSec QA Automation — AI-Powered End-to-End Test Automation Framework"
 authors = [{ name = "Govind Pratap Singh", email = "hackergovind@proton.me" }]
 maintainers = [{ name = "Govind Pratap Singh", email = "hackergovind@proton.me" }]
 requires-python = ">=3.11,<3.14"
@@ -14,7 +14,6 @@ keywords = [
     "LemonSec",
     "QA",
     "security testing",
-    "Hercules",
 ]
 classifiers = [
     "Programming Language :: Python :: 3",
@@ -69,12 +68,11 @@ Homepage = "https://github.com/hackergovind/lemonsec-qa-automation"
 Repository = "https://github.com/hackergovind/lemonsec-qa-automation"
 Documentation = "https://github.com/hackergovind/lemonsec-qa-automation/tree/main/docs"
 "Bug Tracker" = "https://github.com/hackergovind/lemonsec-qa-automation/issues"
-"Upstream (TestZeus Hercules)" = "https://github.com/test-zeus-ai/testzeus-hercules"
-"Author LinkedIn" = "https://www.linkedin.com/in/govindpratapsingh404/"
-"Author Medium" = "http://medium.com/@hackergovind"
+"Developer LinkedIn" = "https://www.linkedin.com/in/govindpratapsingh404/"
+"Developer Medium" = "http://medium.com/@hackergovind"
 
 [project.scripts]
-lemonsec-qa = "lemonsec_hercules.__main__:main"
+lemonsec-qa = "lemonsec_qa.__main__:main"
 
 [dependency-groups]
 dev = [
@@ -97,11 +95,11 @@ requires = ["hatchling"]
 build-backend = "hatchling.build"
 
 [tool.hatch.build.targets.wheel]
-packages = ["lemonsec_hercules"]
+packages = ["lemonsec_qa"]
 
 [tool.isort]
 profile = "black"
-known_first_party = ["lemonsec_hercules"]
+known_first_party = ["lemonsec_qa"]
 line_length = 200
 
 [tool.black]
@@ -114,5 +112,5 @@ python_classes = "Test*"
 python_functions = "test_*"
 
 [tool.coverage.run]
-source = ["lemonsec_hercules"]
+source = ["lemonsec_qa"]
 omit = ["tests/*"]

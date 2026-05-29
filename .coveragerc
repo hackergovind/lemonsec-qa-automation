@@ -1,5 +1,5 @@
 [run]
-source = lemonsec_hercules
+source = lemonsec_qa
 omit =
     tests/*
     .venv/*

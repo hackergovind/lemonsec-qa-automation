@@ -1,6 +1,6 @@
 # ──────────────────────────────────────────────────────────────
 #  LemonSec QA Automation — Windows Setup Script
-#  Fork of TestZeus Hercules | Maintainer: Govind Pratap Singh
+#  Developer: Govind Pratap Singh
 #  LinkedIn:  https://www.linkedin.com/in/govindpratapsingh404/
 #  Medium:    http://medium.com/@hackergovind
 # ──────────────────────────────────────────────────────────────

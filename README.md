@@ -5,8 +5,7 @@
 <h1 align="center">🍋 LemonSec QA Automation</h1>
 
 <p align="center">
-  <strong>AI-Powered End-to-End Test Automation Framework</strong><br/>
-  <em>A custom fork & wrapper built on the <a href="https://github.com/test-zeus-ai/testzeus-hercules">TestZeus Hercules</a> architecture</em>
+  <strong>AI-Powered End-to-End Test Automation Framework</strong>
 </p>
 
 <p align="center">
@@ -15,16 +14,16 @@
   <br/>
   <a href="#license"><img src="https://img.shields.io/badge/License-Apache_2.0-blue.svg?style=flat-square" alt="License" /></a>
   <img src="https://img.shields.io/badge/Python-3.11+-3776AB?style=flat-square&logo=python&logoColor=white" alt="Python" />
-  <img src="https://img.shields.io/badge/Framework-Hercules_Fork-orange?style=flat-square" alt="Fork" />
+  <img src="https://img.shields.io/badge/AI-Powered-blueviolet?style=flat-square" alt="AI-Powered" />
 </p>
 
 ---
 
-## 👤 Maintainer
+## 👤 Developer
 
 <table>
   <tr>
-    <td align="center" width="200">
+    <td align="center" width="250">
       <strong>Govind Pratap Singh</strong><br/>
       <em>Security Researcher & QA Automation Engineer</em><br/><br/>
       <a href="https://www.linkedin.com/in/govindpratapsingh404/">🔗 LinkedIn</a> · 
@@ -37,21 +36,23 @@
 
 ## 📖 About
 
-**LemonSec QA Automation** is a custom fork and wrapper framework built on top of the open-source [TestZeus Hercules](https://github.com/test-zeus-ai/testzeus-hercules) engine. It extends Hercules' AI-driven testing capabilities with:
+**LemonSec QA Automation** is an AI-powered end-to-end test automation framework. It converts plain-English **Gherkin** feature files into fully automated tests — no coding required. It supports **UI, API, security, accessibility, and visual validations** with auto-healing capabilities.
 
-- **Custom namespace & branding** — Runs under the `lemonsec` namespace for seamless integration into LemonSec tooling and infrastructure.
-- **Security-first testing focus** — Pre-configured profiles and templates geared towards security QA workflows.
-- **Streamlined Windows setup** — Tailored PowerShell setup scripts for rapid deployment on Windows environments.
-- **Enhanced configuration** — Opinionated defaults and simplified configuration for faster onboarding.
+### Key Features
 
-### What is Hercules?
-
-Hercules is the world's first open-source AI testing agent. It converts plain-English **Gherkin** feature files into fully automated end-to-end tests — no coding required. It supports UI, API, security, accessibility, and visual validations with auto-healing capabilities.
+- 🧠 **AI-Driven Testing** — Autonomous test planning, execution, and validation powered by LLMs
+- 📝 **Gherkin-In, Results-Out** — Write tests in plain English, get JUnit XML + HTML reports
+- 🔒 **Security-First QA** — Pre-configured for security testing workflows
+- 🌐 **Multi-Browser Support** — Chromium, Firefox, WebKit via Playwright
+- 🐍 **Python Sandbox** — Execute custom Python scripts directly from Gherkin tests
+- 🔄 **Auto-Healing** — Tests adapt automatically as your application evolves
+- ☁️ **Cloud-Ready** — Integrates with BrowserStack, LambdaTest, BrowserBase, AnchorBrowser
+- 🐳 **Docker Support** — Run in containers for CI/CD pipelines
 
 ```
 ┌─────────────────────┐        ┌───────────────────────┐        ┌─────────────────┐
-│   Gherkin Feature   │───────▶│  LemonSec QA Engine   │───────▶│  Test Reports   │
-│   Files (.feature)  │        │  (Hercules Core)      │        │  (JUnit + HTML) │
+│   Gherkin Feature   │───────▶│   LemonSec QA Engine  │───────▶│  Test Reports   │
+│   Files (.feature)  │        │   (AI-Powered)        │        │  (JUnit + HTML) │
 └─────────────────────┘        └───────────────────────┘        └─────────────────┘
 ```
 
@@ -68,7 +69,7 @@ Hercules is the world's first open-source AI testing agent. It converts plain-En
 ### Approach 1: Install via pip (Recommended)
 
 ```bash
-# Install the LemonSec QA Automation package
+# Install LemonSec QA Automation
 pip install lemonsec-qa-automation
 
 # Install browser dependencies
@@ -156,7 +157,7 @@ lemonsec-qa --input-file opt/input/test.feature \
             --llm-model-api-key <YOUR_API_KEY>
 
 # Using project base (auto-discovers input/output/test_data folders)
-lemonsec-qa --project-base ./my-project \
+lemonsec-qa --project-base ./opt \
             --llm-model gpt-4o \
             --llm-model-api-key <YOUR_API_KEY>
 ```
@@ -195,6 +196,37 @@ Feature: Login Security Validation
     And the URL should use HTTPS protocol
     And the session cookie should have the "Secure" flag
 ```
+
+### Python Sandbox Execution
+
+Execute custom Python scripts directly from Gherkin tests:
+
+```gherkin
+# In your feature file
+And execute the apply_filter function from script at "scripts/apply_filter.py" with filter_type as "Turtle Neck"
+```
+
+```python
+# In opt/scripts/apply_filter.py
+async def apply_filter(filter_type: str) -> dict:
+    """Apply filter with multiple fallback strategies."""
+    await page.wait_for_selector('[data-filter-section]')
+
+    for selector in [f'input[value="{filter_type}"]',
+                     f'label:has-text("{filter_type}") input']:
+        if await page.locator(selector).count() > 0:
+            await page.locator(selector).click()
+            break
+
+    return {"status": "success", "filter": filter_type}
+```
+
+**Features:**
+- 🎯 Full Playwright API access
+- 🔒 Multi-tenant security (executor, data, API, restricted modes)
+- 📦 Auto-injected modules (page, browser, logger, asyncio, etc.)
+- 🔄 Reusable across multiple tests
+- ⚙️ Configurable via environment variables
 
 ---
 
@@ -249,7 +281,7 @@ LemonSec QA supports connecting to remote browser farms for scalable parallel te
 
 ```
 lemonsec-qa-automation/
-├── lemonsec_hercules/          # Core engine (forked from testzeus_hercules)
+├── lemonsec_qa/                # Core engine package
 │   ├── __init__.py
 │   └── __main__.py             # CLI entry point
 ├── helper_scripts/
@@ -289,31 +321,19 @@ make test-case
 
 ---
 
-## 🙏 Acknowledgements & Attribution
+## 🙏 Acknowledgements
 
-> **This project is a fork of [TestZeus Hercules](https://github.com/test-zeus-ai/testzeus-hercules)**, the world's first open-source AI testing agent, originally created by **Shriyansh Agnihotri** and the [TestZeus](https://www.testzeus.com) team.
->
-> LemonSec QA Automation builds upon and extends the Hercules architecture with custom configurations, namespace changes, and security-focused testing workflows. All original licensing terms are respected.
->
-> We are grateful to the TestZeus community for their pioneering work in democratizing AI-powered test automation.
-
-### Original Project Links
-
-- 🏠 **TestZeus Website**: [testzeus.com](https://www.testzeus.com)
-- 📦 **Hercules on GitHub**: [test-zeus-ai/testzeus-hercules](https://github.com/test-zeus-ai/testzeus-hercules)
-- 📺 **TestZeus YouTube**: [@TestZeus](https://www.youtube.com/@TestZeus)
-- 🐳 **Hercules on Docker Hub**: [testzeus/hercules](https://hub.docker.com/r/testzeus/hercules)
-- 📚 **Hercules on PyPI**: [testzeus-hercules](https://pypi.org/project/testzeus-hercules/)
+This project is built upon the open-source [TestZeus Hercules](https://github.com/test-zeus-ai/testzeus-hercules) engine, originally created by [TestZeus](https://www.testzeus.com). We acknowledge and respect their contribution to the test automation community.
 
 ---
 
 ## 📄 License
 
-This project inherits the license from the upstream [TestZeus Hercules](https://github.com/test-zeus-ai/testzeus-hercules) project. See [LICENSE](LICENSE) for details.
+Licensed under the Apache License 2.0. See [LICENSE](LICENSE) for details.
 
 ---
 
 <p align="center">
   <strong>Built with 🍋 by <a href="https://www.linkedin.com/in/govindpratapsingh404/">Govind Pratap Singh</a></strong><br/>
-  <em>Powered by <a href="https://github.com/test-zeus-ai/testzeus-hercules">TestZeus Hercules</a></em>
+  <a href="https://www.linkedin.com/in/govindpratapsingh404/">LinkedIn</a> · <a href="http://medium.com/@hackergovind">Medium</a>
 </p>

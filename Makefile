@@ -1,6 +1,8 @@
 # ──────────────────────────────────────────────────────────────
 #  LemonSec QA Automation — Makefile
-#  Fork of TestZeus Hercules | Maintainer: Govind Pratap Singh
+#  Developer: Govind Pratap Singh
+#  LinkedIn:  https://www.linkedin.com/in/govindpratapsingh404/
+#  Medium:    http://medium.com/@hackergovind
 # ──────────────────────────────────────────────────────────────
 
 .ONESHELL:
@@ -37,20 +39,20 @@ install:          ## Install the project in dev mode.
 
 .PHONY: fmt
 fmt:              ## Format code using black & isort.
-	uv run isort lemonsec_hercules/
-	uv run black -l 200 lemonsec_hercules/
+	uv run isort lemonsec_qa/
+	uv run black -l 200 lemonsec_qa/
 	uv run black -l 200 tests/
 
 .PHONY: lint
 lint: fmt         ## Run pep8, black, mypy linters.
-	uv run black -l 200 --check lemonsec_hercules/
+	uv run black -l 200 --check lemonsec_qa/
 	uv run black -l 200 --check tests/
-	# uv run mypy --ignore-missing-imports lemonsec_hercules/
+	# uv run mypy --ignore-missing-imports lemonsec_qa/
 
 .PHONY: test
 test: lint        ## Run tests and generate coverage report.
 	uv run playwright install --with-deps
-	uv run pytest -v --junit-xml=tests/test_output.xml --cov-config .coveragerc --cov=lemonsec_hercules -l --tb=short --maxfail=1 tests/
+	uv run pytest -v --junit-xml=tests/test_output.xml --cov-config .coveragerc --cov=lemonsec_qa -l --tb=short --maxfail=1 tests/
 	uv run coverage xml
 	uv run coverage html
 

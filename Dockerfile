@@ -1,12 +1,14 @@
 # ──────────────────────────────────────────────────────────────
 #  LemonSec QA Automation — Dockerfile
-#  Fork of TestZeus Hercules | Maintainer: Govind Pratap Singh
+#  Developer: Govind Pratap Singh
+#  LinkedIn:  https://www.linkedin.com/in/govindpratapsingh404/
+#  Medium:    http://medium.com/@hackergovind
 # ──────────────────────────────────────────────────────────────
 
 FROM python:3.11-slim AS base
 
 LABEL maintainer="Govind Pratap Singh <hackergovind@proton.me>"
-LABEL description="LemonSec QA Automation — AI-Powered E2E Testing (Hercules Fork)"
+LABEL description="LemonSec QA Automation — AI-Powered End-to-End Test Automation"
 LABEL org.opencontainers.image.source="https://github.com/hackergovind/lemonsec-qa-automation"
 LABEL org.opencontainers.image.url="https://www.linkedin.com/in/govindpratapsingh404/"
 
@@ -29,7 +31,7 @@ RUN pip install --no-cache-dir --upgrade pip \
 RUN playwright install --with-deps chromium
 
 # ── Copy source code ────────────────────────────────────────
-COPY lemonsec_hercules/ ./lemonsec_hercules/
+COPY lemonsec_qa/ ./lemonsec_qa/
 COPY opt/ ./opt/
 
 # ── Runtime configuration ────────────────────────────────────
