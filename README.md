@@ -321,10 +321,6 @@ make test-case
 
 ---
 
-## 🙏 Acknowledgements
-
-This project is built upon the open-source [TestZeus Hercules](https://github.com/test-zeus-ai/testzeus-hercules) engine, originally created by [TestZeus](https://www.testzeus.com). We acknowledge and respect their contribution to the test automation community.
-
 ---
 
 ## 📄 License
