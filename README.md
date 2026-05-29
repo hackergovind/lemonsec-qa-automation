@@ -330,6 +330,6 @@ Licensed under the Apache License 2.0. See [LICENSE](LICENSE) for details.
 ---
 
 <p align="center">
-  <strong>Built with 🍋 by <a href="https://www.linkedin.com/in/govindpratapsingh404/">Govind Pratap Singh</a></strong><br/>
+  <strong> <a href="https://www.linkedin.com/in/govindpratapsingh404/">Govind Pratap Singh</a></strong><br/>
   <a href="https://www.linkedin.com/in/govindpratapsingh404/">LinkedIn</a> · <a href="http://medium.com/@hackergovind">Medium</a>
 </p>
