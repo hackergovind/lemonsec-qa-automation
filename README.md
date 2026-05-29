@@ -79,7 +79,7 @@ playwright install --with-deps
 
 ```bash
 # Clone the repository
-git clone https://github.com/govindpratapsingh404/lemonsec-qa-automation.git
+git clone https://github.com/hackergovind/lemonsec-qa-automation.git
 cd lemonsec-qa-automation
 
 # Install uv (Python package manager)

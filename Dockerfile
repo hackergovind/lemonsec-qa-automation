@@ -7,7 +7,7 @@ FROM python:3.11-slim AS base
 
 LABEL maintainer="Govind Pratap Singh <hackergovind@proton.me>"
 LABEL description="LemonSec QA Automation — AI-Powered E2E Testing (Hercules Fork)"
-LABEL org.opencontainers.image.source="https://github.com/govindpratapsingh404/lemonsec-qa-automation"
+LABEL org.opencontainers.image.source="https://github.com/hackergovind/lemonsec-qa-automation"
 LABEL org.opencontainers.image.url="https://www.linkedin.com/in/govindpratapsingh404/"
 
 # ── System dependencies ─────────────────────────────────────

@@ -65,10 +65,10 @@ dependencies = [
 ]
 
 [project.urls]
-Homepage = "https://github.com/govindpratapsingh404/lemonsec-qa-automation"
-Repository = "https://github.com/govindpratapsingh404/lemonsec-qa-automation"
-Documentation = "https://github.com/govindpratapsingh404/lemonsec-qa-automation/tree/main/docs"
-"Bug Tracker" = "https://github.com/govindpratapsingh404/lemonsec-qa-automation/issues"
+Homepage = "https://github.com/hackergovind/lemonsec-qa-automation"
+Repository = "https://github.com/hackergovind/lemonsec-qa-automation"
+Documentation = "https://github.com/hackergovind/lemonsec-qa-automation/tree/main/docs"
+"Bug Tracker" = "https://github.com/hackergovind/lemonsec-qa-automation/issues"
 "Upstream (TestZeus Hercules)" = "https://github.com/test-zeus-ai/testzeus-hercules"
 "Author LinkedIn" = "https://www.linkedin.com/in/govindpratapsingh404/"
 "Author Medium" = "http://medium.com/@hackergovind"

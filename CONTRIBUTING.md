@@ -12,7 +12,7 @@ Thank you for your interest in contributing to **LemonSec QA Automation**! 🍋
 
 ### Reporting Bugs
 
-1. Check if the issue already exists in [GitHub Issues](https://github.com/govindpratapsingh404/lemonsec-qa-automation/issues).
+1. Check if the issue already exists in [GitHub Issues](https://github.com/hackergovind/lemonsec-qa-automation/issues).
 2. If not, open a new issue with:
    - A clear, descriptive title
    - Steps to reproduce the problem

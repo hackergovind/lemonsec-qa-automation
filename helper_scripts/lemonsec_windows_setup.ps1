@@ -159,7 +159,7 @@ Write-Host "    1. Copy .env-example to .env and fill in your API key" -Foregrou
 Write-Host "    2. Place your .feature file in opt/input/" -ForegroundColor DarkGray
 Write-Host "    3. Run: lemonsec-qa --project-base ./opt --llm-model gpt-4o --llm-model-api-key <KEY>" -ForegroundColor DarkGray
 Write-Host ""
-Write-Host "  Docs:     https://github.com/govindpratapsingh404/lemonsec-qa-automation" -ForegroundColor DarkCyan
+Write-Host "  Docs:     https://github.com/hackergovind/lemonsec-qa-automation" -ForegroundColor DarkCyan
 Write-Host "  LinkedIn: https://www.linkedin.com/in/govindpratapsingh404/" -ForegroundColor DarkCyan
 Write-Host "  Medium:   http://medium.com/@hackergovind" -ForegroundColor DarkCyan
 Write-Host ""
